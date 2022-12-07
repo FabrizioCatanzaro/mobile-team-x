@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView , StyleSheet, ImageBackground} from 'react-native'
+import { View, ScrollView , StyleSheet, ImageBackground, Image} from 'react-native'
 import { Text, IconButton } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -21,6 +21,7 @@ export default function Home(props) {
             <IconButton style={styles.buttonsRef} onPress={RedirectHotel}   icon={props => <Icon style={styles.Icon} name="calendar-month-outline" {...props} />}/>
         </View>
             </ImageBackground>
+            {/* <Image style={styles.ImageIcon}  source={require('../../assets/logo.png')} /> */}
             <Text variant="h4" style={styles.titlePrincipal}>My Tinerary</Text>
         </View>
     </ScrollView>
@@ -70,5 +71,9 @@ const styles = StyleSheet.create({
         /* backgroundColor:'yellow', */
         padding:8,
         color:'orange',
+    },
+    ImageIcon:{
+        width:70,
+        height:70,
     }
 })

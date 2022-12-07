@@ -1,8 +1,6 @@
 import { createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
-import { BASE_URL } from "../../api/url";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { BASE_URL } from '../../src/api/url'
 
 const getMyShow= createAsyncThunk('getMyShow', async({user}) => {
     let url = `${BASE_URL}/api/shows?userId=${user}`
@@ -60,7 +58,7 @@ const editMyShow= createAsyncThunk('editMyShow', async ({token, data ,idShow}) =
         let res = await axios.put(url, data, headers)
         console.log('RES',res)
         if (res.data.success){
-            toast.success(res.data.message, {
+            /* toast.success(res.data.message, {
                 icon: '🌆',
                 position: "top-right",
                 autoClose: 2500,
@@ -81,9 +79,9 @@ const editMyShow= createAsyncThunk('editMyShow', async ({token, data ,idShow}) =
                 draggable: false,
                 progress: undefined,
                 theme: "colored",
-                });
+                }); */
           } else{
-            toast.error(res.data.message.join('\n'), {
+            /* toast.error(res.data.message.join('\n'), {
               icon: '💔',
               position: "top-right",
               autoClose: 2500,
@@ -93,7 +91,7 @@ const editMyShow= createAsyncThunk('editMyShow', async ({token, data ,idShow}) =
               draggable: true,
               progress: undefined,
               theme: "colored",
-              })
+              }) */
           }
         return{
             mensaje: res.data.message

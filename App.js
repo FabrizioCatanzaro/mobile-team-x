@@ -1,15 +1,16 @@
-import { StyleSheet,Text, View } from 'react-native';
-import 'react-native-gesture-handler'
-import { NavigationContainer } from '@react-navigation/native';
-import Drawer from './src/navigation/Drawer';
 
+import Drawer from './src/navigation/Drawer';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { Stack } from '@react-native-material/core';
 
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <Provider store={store}>
       <Drawer/>
-   </NavigationContainer>
+      <Stack/>
+    </Provider>
   );
 }
 

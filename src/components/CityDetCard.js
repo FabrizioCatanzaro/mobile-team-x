@@ -1,24 +1,16 @@
 import { ScrollView, Text, StyleSheet, Image, Button, Alert } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native';
 
-export default function CityCard(props) {
-    let {img,name,continent, population, id} = props;
-
-    const navigation = useNavigation()
-
-    const navigateDetails = () => {
-        navigation.navigate('CityDetails', {id: id})
-    }
-    //console.log(props)
+export default function CityDetCard(props) {
+    let {img,name,continent, population,fn} = props;
 
     return (
-        <ScrollView id={id} style={[styles.cardCity, {flexDirection: 'column', padding: 5}]}>
-            <Image source={{uri: img}} style={{ width: '100%', height: 250, borderTopLeftRadius: 25, borderTopRightRadius: 25 }} />
+        <ScrollView style={[styles.cardCity, {flexDirection: 'column', padding: 5}]}>
+            <Image source={{uri: img}} style={{ width: '100%', height: 380, borderTopLeftRadius: 25, borderTopRightRadius: 25 }} />
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.continent}>{continent}</Text>
             <Text style={styles.population}>Population - {population}</Text>
-            <Button title='Discover +' accessibilityLabel='Discover more about this city' color={'#F68712'} onPress={navigateDetails}/>
+            <Button title={`Discover tineraries`} accessibilityLabel={`Discover ${name} tineraries`} color={'#F68712'} onPress={fn}/>
         </ScrollView>
     )
 
@@ -30,31 +22,32 @@ export default function CityCard(props) {
             borderStyle: 'solid',
             borderWidth: 5,
             borderRadius: 25,
-            height: 390,
+            height: 600,
         },
 
         name: {
             color: '#fff',
             textAlign: 'center',
-            lineHeight: 30,
-            fontSize: 25,
+            lineHeight: 60,
+            fontSize: 50,
             fontWeight: 'bold',
-            paddingTop: 7,
+            paddingTop: 10,
         },
         
         continent: {
             color: '#F68712',
             textAlign: 'center',
-            lineHeight: 30,
-            fontSize: 18,
+            lineHeight: 50,
+            fontSize: 30,
             fontStyle: 'italic',
         },
 
         population: {
             color: '#fff',
             textAlign: 'center',
-            lineHeight: 30,
-            fontSize: 18,
-            paddingBottom: 5,
+            lineHeight: 50,
+            fontSize: 30,
+            letterSpacing: 3,
+            paddingBottom: 20,
         },
     })

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { BASE_URL } from "../../api/url";
+import { BASE_URL } from '../../src/api/url'
 
 const getMyTinerary = createAsyncThunk('getMyTinerary', async({user}) => {
     let url = `${BASE_URL}/api/itineraries?userId=${user}`

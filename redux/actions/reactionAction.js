@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { BASE_URL } from "../../api/url";
+import { BASE_URL } from '../../src/api/url'
 
 const getReactions = createAsyncThunk("getReactions", async ({id, token}) => {
     let headers = { headers: { 'Authorization': `Bearer ${token}`} }

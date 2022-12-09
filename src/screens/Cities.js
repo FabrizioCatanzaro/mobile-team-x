@@ -44,8 +44,8 @@ export default function Cities(props) {
 
     return (
         <ScrollView style={[styles.allCities, {flexDirection: 'column'}]}>
-            <Text style={{textAlign: 'center', fontSize: 40, letterSpacing: 3, fontWeight: 'bold'}} >My Tinerary</Text>
-            <Text style={{textAlign: 'center', fontSize: 30, letterSpacing: 2, color: '#F68712'}} >Cities</Text>
+            <Text style={{textAlign: 'center', fontFamily: 'sans-serif-condensed', fontSize: 40, letterSpacing: 3, fontWeight: 'bold'}} >My Tinerary</Text>
+            <Text style={{textAlign: 'center', fontFamily: 'sans-serif-light', fontSize: 30, letterSpacing: 2, color: '#F68712'}} >Cities</Text>
             <TextInput style={styles.textInput} onChangeText={filter} ref={searchInput} placeholder="Find city by its name..." />
             <View>
                 { categories.map ( e =>

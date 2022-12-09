@@ -40,6 +40,7 @@ export default function CityCard(props) {
             fontSize: 25,
             fontWeight: 'bold',
             paddingTop: 7,
+            fontFamily: 'sans-serif-condensed',
         },
         
         continent: {
@@ -48,6 +49,7 @@ export default function CityCard(props) {
             lineHeight: 30,
             fontSize: 18,
             fontStyle: 'italic',
+            fontFamily: 'sans-serif-medium'
         },
 
         population: {
@@ -56,5 +58,6 @@ export default function CityCard(props) {
             lineHeight: 30,
             fontSize: 18,
             paddingBottom: 5,
+            fontFamily: 'sans-serif-medium'
         },
     })

@@ -1,5 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from '../actions/userActions'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { log_in, re_log_in, log_out} = userActions;
 
@@ -25,7 +26,11 @@ const signInReducer = createReducer(inicialState,
                     let {user,token} = response
                     /* console.log(user); */
 
-                    localStorage.setItem('token', JSON.stringify({token:{user:token}}))
+                    //localStorage.setItem('token', JSON.stringify({token:{user:token}}))
+                    AsyncStorage.setItem('token', JSON.stringify(token))
+                        .catch (e => console.log(e))
+
+
                     let newState = {
                         ...state,
                         name:user.name,
@@ -69,7 +74,9 @@ const signInReducer = createReducer(inicialState,
                 /* console.log(action.payload); */
 
                 if(success){
-                    localStorage.removeItem('token')
+                    AsyncStorage.removeItem('token')
+                    .catch (e => console.log(e))
+                    
                     let newState = {
                         ...state,
                         name:'',

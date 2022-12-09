@@ -1,16 +1,23 @@
 import { ScrollView, Text, StyleSheet, Image, Button, Alert } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 export default function CityDetCard(props) {
-    let {img,name,continent, population,fn} = props;
+    let {img,name,continent, population, id} = props;
+
+    const navigation = useNavigation()
+
+    const navigateDetails = () => {
+        navigation.navigate('Itineraries', {id: id})
+    }
 
     return (
-        <ScrollView style={[styles.cardCity, {flexDirection: 'column', padding: 5}]}>
+        <ScrollView id={id} style={[styles.cardCity, {flexDirection: 'column', padding: 5}]}>
             <Image source={{uri: img}} style={{ width: '100%', height: 380, borderTopLeftRadius: 25, borderTopRightRadius: 25 }} />
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.continent}>{continent}</Text>
             <Text style={styles.population}>Population - {population}</Text>
-            <Button title={`Discover tineraries`} accessibilityLabel={`Discover ${name} tineraries`} color={'#F68712'} onPress={fn}/>
+            <Button title={`Discover tineraries`} accessibilityLabel={`Discover ${name} tineraries`} color={'#F68712'} onPress={navigateDetails}/>
         </ScrollView>
     )
 
@@ -22,7 +29,7 @@ export default function CityDetCard(props) {
             borderStyle: 'solid',
             borderWidth: 5,
             borderRadius: 25,
-            height: 600,
+            minHeight: 600,
         },
 
         name: {
@@ -32,6 +39,7 @@ export default function CityDetCard(props) {
             fontSize: 50,
             fontWeight: 'bold',
             paddingTop: 10,
+            fontFamily: 'sans-serif-condensed'
         },
         
         continent: {
@@ -40,6 +48,7 @@ export default function CityDetCard(props) {
             lineHeight: 50,
             fontSize: 30,
             fontStyle: 'italic',
+            fontFamily: 'sans-serif-medium'
         },
 
         population: {
@@ -49,5 +58,6 @@ export default function CityDetCard(props) {
             fontSize: 30,
             letterSpacing: 3,
             paddingBottom: 20,
+            fontFamily: 'sans-serif-medium'
         },
     })

@@ -6,7 +6,7 @@ import cityActions from '../redux/actions/cityAction'
 import CityDetCard from '../components/CityDetCard'
 import { useRoute } from '@react-navigation/native'
 
-export default function CityDetails(props) {
+export default function CityDetails() {
     const dispatch = useDispatch()
     const {getOneCity} = cityActions
     let {oneCity} = useSelector(store => store.cityReducer)
@@ -21,7 +21,7 @@ export default function CityDetails(props) {
 
     return (
         <ScrollView style={[styles.details, {flexDirection: 'column'}]}>
-            <CityDetCard img={oneCity?.photo} name={oneCity?.name} continent={oneCity?.continent} population={oneCity?.population} />
+            <CityDetCard id={cityId} img={oneCity?.photo} name={oneCity?.name} continent={oneCity?.continent} population={oneCity?.population} />
         </ScrollView>
 /*         <ScrollView style={[styles.details, {flexDirection: 'column'}]}>
             <ImageBackground source={image} style={styles.background} resizeMode="cover">

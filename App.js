@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import Drawer from './src/navigation/Drawer';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import TabNav from './src/navigation/TabNav';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Probando inicializacion!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <Drawer/>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../api/api";
+import { BASE_URL } from '../../src/api/url'
 import axios from 'axios';
 
 

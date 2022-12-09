@@ -1,8 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { BASE_URL } from "../../api/api";
+import { BASE_URL } from '../../src/api/url'
 import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 const getHotels = createAsyncThunk("getHotels", async () => {
@@ -73,7 +71,7 @@ const editMyHotel= createAsyncThunk('editMyHotel', async ({token, data ,idHotel}
         let res = await axios.put(url, data, headers)
         console.log(res)
         if (res.data.success){
-            toast.success(res.data.message, {
+           /*  toast.success(res.data.message, {
                 icon: '🌆',
                 position: "top-right",
                 autoClose: 2500,
@@ -94,9 +92,9 @@ const editMyHotel= createAsyncThunk('editMyHotel', async ({token, data ,idHotel}
                 draggable: false,
                 progress: undefined,
                 theme: "colored",
-                });
+                }); */
           } else{
-            toast.error(res.data.message.join('\n'), {
+            /* toast.error(res.data.message.join('\n'), {
               icon: '💔',
               position: "top-right",
               autoClose: 2500,
@@ -106,7 +104,7 @@ const editMyHotel= createAsyncThunk('editMyHotel', async ({token, data ,idHotel}
               draggable: true,
               progress: undefined,
               theme: "colored",
-              })
+              }) */
           }
         return{
             mensaje: res.data.message

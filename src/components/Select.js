@@ -7,6 +7,7 @@ export default function Select(props) {
 
     let {evento} = props
     
+    
     return (
          <View style={styles.container}>
              <RNPickerSelect style={styles.select} onValueChange={evento}

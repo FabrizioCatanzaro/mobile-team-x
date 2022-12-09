@@ -9,6 +9,7 @@ import TitleMyTinerary from '../components/TitleMyTinerary'
 
 export default function Hotels() {
   
+  
   const dispatch = useDispatch()
   const {getHotels, getHotelsFiltered} = hotelActions
   const {hotels} = useSelector(store => store.hotels)

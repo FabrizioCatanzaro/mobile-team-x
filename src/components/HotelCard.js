@@ -5,6 +5,7 @@ import ButtonCard from './ButtonCard'
 export default function HotelCard(props) {
     let {name,photo,capacity, description, id} = props
 
+    
   return (
     <View style={styles.containerCard}>
         <View>

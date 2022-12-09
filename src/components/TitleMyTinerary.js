@@ -4,6 +4,7 @@ import React from 'react'
 export default function TitleMyTinerary(props) {
     let {title} = props
 
+    
   return (
     <View style={styles.containerLogoTitle}>
         <Image style={styles.ImageIcon}  source={require('../../assets/logo.png')} /> 
